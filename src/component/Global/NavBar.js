@@ -15,11 +15,13 @@ export default function NavBar() {
 
   return (
     <div>
-    <BrowserRouter>
-      <Link to={routs.home}>homePage</Link>
-      <Link to={routs.product}>product</Link>
-      <Link to={routs.ShoppingCart}>ShoppingCart</Link>
-      <Link to={routs.Checkout}>Checkout</Link>
+ <BrowserRouter>
+
+   
+      <Link class="nav-link" to={routs.home}>homePage</Link>
+      <Link class="nav-link" to={routs.product}>product</Link>
+      <Link class="nav-link" to={routs.ShoppingCart}>ShoppingCart</Link>
+      <Link class="nav-link" to={routs.Checkout}>Checkout</Link>
 
        <Routes>
         <Route path={routs.home} element={<HomePage/>} />
