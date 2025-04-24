@@ -6,7 +6,7 @@ import Footer from './component/Global/Footer';
 
 function App() {
   return (
-   <div>
+   <div className="app-container">
     <NavBar/>
     <Footer/>
    </div>
