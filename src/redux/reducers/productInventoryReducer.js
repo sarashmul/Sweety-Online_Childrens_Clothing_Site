@@ -1,7 +1,7 @@
 import { BUY_PRODUCTS } from "../actinTipes";
 
 const initialState ={
-    productInventory:[],
+    products:[],
    };
    
    export const  productInventoryReducer = (state = initialState, action) => {
