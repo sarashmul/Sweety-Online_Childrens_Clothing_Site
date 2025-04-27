@@ -1,7 +1,7 @@
 import { createStore,combineReducers } from "redux";
 
-import { shopCartReduser } from "./shopCartReducer";
-import { productInventoryReducer } from "./productInventoryReducer";
+import { shopCartReduser } from "./reducers/shopCartReducer";
+import { productInventoryReducer } from "./reducers/productInventoryReducer";
 
 const rootReducer=combineReducers({
     shopCart: shopCartReduser,

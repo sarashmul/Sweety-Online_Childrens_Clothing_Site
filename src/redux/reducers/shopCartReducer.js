@@ -5,6 +5,8 @@ const initialState ={
 
 export const shopCartReduser  = (state = initialState, action) => {
     switch (action.type){
-        
+        case ADD_PRODUCT:{
+            return{...state,}
+        }
     }
 }
