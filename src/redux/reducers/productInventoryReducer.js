@@ -21,7 +21,7 @@ const initialState ={
       {
         id: 3,
         name: "תיק גב",
-        category: "אקססוריז",
+        category: "girls",
         price: 180,
         description: "תיק גב מרווח ועמיד עם תאים מרובים.",
         imageUrl: "https://via.placeholder.com/300x400?text=תיק+גב",
@@ -29,7 +29,7 @@ const initialState ={
       {
         id: 4,
         name: "חולצת טי",
-        category: "בגדים",
+        category: "girls",
         price: 70,
         description: "חולצת טי איכותית מ-100% כותנה, מתאימה ליום יום.",
         imageUrl: "https://via.placeholder.com/300x400?text=חולצת+טי",

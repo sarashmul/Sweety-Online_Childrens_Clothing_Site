@@ -59,7 +59,6 @@ export default function ProductsPage() {
     navigate(routes.product,{state:{product:selectedProduct}})
 
   }
-  const products=useSelector((state)=>state.productInventory.products);
 
 
   const products = useSelector((state) => state.productInventory.products);
@@ -89,8 +88,8 @@ export default function ProductsPage() {
           ))}
       </div>
 
-    ))}
-  </div>
+    
+  
   {selectedProduct && (
      goToProduct(selectedProduct)
     )}
@@ -98,3 +97,4 @@ export default function ProductsPage() {
 
   )
 
+}
