@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom';
 export default function NavBar() {
   const routes = {
     home: "/",
-    product: "/product",
+    products: "/product",
     ShoppingCart: "/ShoppingCart",
     Checkout: "/Checkout"
   };
@@ -25,7 +25,7 @@ export default function NavBar() {
               <Link className="nav-link" to={routes.ShoppingCart}>ShoppingCart</Link>
             </li>
             <li className="nav-item dropdown">
-              <Link className="nav-link dropdown-toggle" to={routes.product}>Product</Link>
+              <Link className="nav-link dropdown-toggle" to={routes.products}>Product</Link>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Action</a></li>
                 <li><a className="dropdown-item" href="#">Another action</a></li>

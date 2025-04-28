@@ -1,44 +1,49 @@
-import React from 'react'
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { add_product } from '../../redux/action';
+import { useLocation } from 'react-router-dom';
 
-export default function ProductModal({ product, onClose }) {
-    const dispatch=useDispatch();
+export default function ProductModal() {
+  const location = useLocation();
+  const { product } = location.state || {};
+  const dispatch = useDispatch();
 
-  return(
+  if (!product) {
+    return <div>אין מוצר להצגה</div>;
+  }
 
-    <div className ="container mt-5">
-    <div className ="row">
-       
-      <div className ="col-md-6">
-      <h2>{product.name}</h2>
-        <p className ="text-muted">Category: {product.category}</p>
-        <h3 className ="text-primary">{product.price}</h3>
-        <p>{product.description}</p>
-        
-       
-        <label for="sizeSelect">Select Size:</label>
-        <select id="sizeSelect" className ="form-control mb-3">
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
-        </select>
+  return (
+    <div className="container mt-5">
+      <div className="row">
+        <div className="col-md-6">
+          <h2>{product.name}</h2>
+          <p className="text-muted">קטגוריה: {product.category}</p>
+          <h3 className="text-primary">{product.price}</h3>
+          <p>{product.description}</p>
 
-        <button onClick={() => dispatch(add_product(product))}  className ="btn btn-primary btn-lg" >Add to Cart</button>
-      </div>
+          <label htmlFor="sizeSelect">בחרי מידה:</label>
+          <select id="sizeSelect" className="form-control mb-3">
+            <option value="small">קטן</option>
+            <option value="medium">בינוני</option>
+            <option value="large">גדול</option>
+          </select>
 
-    
-      <div className ="col-md-6">
-        <img src={product.imageUrl}  className ="img-fluid" alt={product.name}/>
+          <button
+            onClick={() => dispatch(add_product(product))}
+            className="btn btn-primary btn-lg"
+          >
+            הוספה לעגלה
+          </button>
+        </div>
+
+        <div className="col-md-6">
+          <img
+            src={product.imageUrl}
+            className="img-fluid"
+            alt={product.name}
+          />
+        </div>
       </div>
     </div>
-  </div>
-
-    
-  )
+  );
 }
-
-
-
-  
- 
