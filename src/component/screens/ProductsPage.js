@@ -3,8 +3,21 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import ProductCard from '../Products/ProductCard';
 import ProductModal from '../Products/ProductModal';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 export default function ProductsPage() {
+  const location=useLocation();
+  const {category}=location.state||{};
+  const routes = {
+    product:"/productModal"
+  };
+
+  const navigate=useNavigate();
+  
+  const goToProduct=(selectedProduct)=>{
+    navigate(routes.product,{state:{product:selectedProduct}})
+
+  }
   const products=useSelector((state)=>state.productInventory.products);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -28,10 +41,7 @@ export default function ProductsPage() {
     ))}
   </div>
   {selectedProduct && (
-      <ProductModal 
-        product={selectedProduct}
-        onClose={closeModal}
-      />
+     goToProduct(selectedProduct)
     )}
 </div>
 
