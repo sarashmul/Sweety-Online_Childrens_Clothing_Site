@@ -1,0 +1,29 @@
+.card-img {
+    transition: transform 0.5s ease;
+  }
+  
+  .card:hover .card-img {
+    transform: scale(1.1);
+  }
+  .card {
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+/* צל על הכרטיס */
+   /* .card-img-overlay {
+    transition: background-color 0.3s ease;
+  }
+  
+  .card:hover .card-img-overlay{
+    background-color: rgba(0, 0, 0, 0.3);
+    
+  }
+  .card:hover .btn{
+    background-color: white;
+    color:rgb(96, 91, 91);
+  }
+
+  .btn:hover{
+    background-color:rgba(1, 1, 1, 0) ;
+  }  */

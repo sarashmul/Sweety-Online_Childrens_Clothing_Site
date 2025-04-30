@@ -1,45 +1,63 @@
 import React from 'react'
 import CategoryCard from './CategoryCard'
-import ProductsPage from '../screens/ProductsPage'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import ImgGirls from '../screens/Image/girls.jpg'
+import ImgBoys from "../screens/Image/boys.jpg"
+import ImgBasic from "../screens/Image/basic.jpg"
 export default function CategorysGrid() {
-    const routes = {
-        home: "/",
-        products: "/products",
-        ShoppingCart: "/ShoppingCart",
-        Checkout: "/Checkout",
-        product:"/productModal",
-        productsByCategory:"/productsByCategory"
-      };
-      const navigate=useNavigate();
-      const goToProductsByCategory=(selectedCategory)=>{
-        navigate(routes.products,{state:{category:selectedCategory}})
-      }
-const [categorys, setCategorys] = useState(["girls", "boys", "basic"])
-const [selectedCategory, setSelectedCategory] = useState(null);
+  const routes = {
+    home: "/",
+    products: "/products",
+    ShoppingCart: "/ShoppingCart",
+    Checkout: "/Checkout",
+    product: "/productModal",
+    productsByCategory: "/productsByCategory"
+  };
+  const navigate = useNavigate();
+  const goToProductsByCategory = (selectedCategory) => {
+    navigate(routes.products, { state: { category: selectedCategory } })
+  }
+  const [categorys, setCategorys] = useState([
+    {
+      name: "girls",
+      img: ImgGirls
+    },
+    {
+      name: "boys",
+      img: ImgBoys
+    },
+    {
+      name: "basic",
+      img: ImgBasic
+    },
+    {
+      name: "basic",
+      img: ImgBasic
+    }])
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
-const handleCategoryClick = (category) => {
-  setSelectedCategory(category);
-};
-    
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
-    
-      <div className="container mt-5">
-          <div className="row">
-            {categorys.map(category => (
-              <div className="col-md-4 mb-4" key={category}>
-                <CategoryCard
-                  category={category}
-                  onClick={() => handleCategoryClick(category)}
-                />
-              </div>
-            ))}
+
+    <div className="container mt-5">
+      <div className="row">
+        {categorys.map(category => (
+          <div className="col-md-3 mb-4" key={category.name}>
+            <CategoryCard
+              category={category}
+              onClick={() => handleCategoryClick(category)}
+            />
           </div>
-          {selectedCategory && (
-           goToProductsByCategory(selectedCategory)
-          )}
-        </div>
-    
+        ))}
+      </div>
+      {selectedCategory && (
+        goToProductsByCategory(selectedCategory)
+      )}
+    </div>
+
   )
 }
