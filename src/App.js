@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css';
 import NavBar from './component/Global/NavBar';
 import Footer from './component/Global/Footer';
 import { Provider } from 'react-redux';
