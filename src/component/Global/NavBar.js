@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom';
 export default function NavBar() {
   const routes = {
     home: "/",
-    products: "/product",
+    products: "/products",
     ShoppingCart: "/ShoppingCart",
     Checkout: "/Checkout"
   };
