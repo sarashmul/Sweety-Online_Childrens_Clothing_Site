@@ -10,7 +10,7 @@ import ProductsPage from './component/screens/ProductsPage';
 import ShoppingCartPage from './component/screens/ShoppingCartPage';
 import CheckoutPage from './component/screens/CheckoutPage';
 import ProductModal from './component/Products/ProductModal';
-
+import SortProduct from './component/Products/SortProduct';
 
 function App() {
   const routes = {
@@ -19,7 +19,8 @@ function App() {
     ShoppingCart: "/ShoppingCart",
     Checkout: "/Checkout",
     product:"/productModal",
-    productsByCategory:"/productsByCategory"
+    productsByCategory:"/productsByCategory",
+    search:"/SortProducts/:text"
   };
 
   return (
@@ -32,6 +33,7 @@ function App() {
           <Routes>
             <Route path={routes.home} element={<HomePage />} />
             <Route path={routes.products} element={<ProductsPage />} />
+            <Route path={routes.search} element={<SortProduct/>} />
             <Route path={routes.ShoppingCart} element={<ShoppingCartPage />} />
             <Route path={routes.Checkout} element={<CheckoutPage />} />
             <Route path={routes.product} element={<ProductModal/>}/>

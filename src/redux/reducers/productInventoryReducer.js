@@ -7,7 +7,7 @@ const initialState ={
         name: "שמלה פרחונית",
         category: "בגדים",
         price: 120,
-        description: "שמלה קלילה עם הדפס פרחים, מושלמת לקיץ.",
+        description: "שמלה פחונית קלילה עם הדפס פרחים, מושלמת לקיץ.",
         imageUrl: "https://via.placeholder.com/300x400?text=שמלה",
       },
       {

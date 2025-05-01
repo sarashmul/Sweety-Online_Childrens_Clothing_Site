@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState} from 'react';
+import { Link ,useNavigate} from 'react-router-dom';
 import './NavBar.css'
 
 export default function NavBar() {
@@ -7,14 +7,19 @@ export default function NavBar() {
     home: "/",
     products: "/products",
     ShoppingCart: "/ShoppingCart",
-    Checkout: "/Checkout"
+    Checkout: "/Checkout",
+    SortProduct:"/SortProduct"
   };
-
+ const [searchText,setsearchText]=useState('');
+ const navigate = useNavigate();
+  const goToSearch = () => {
+    navigate(`/SortProducts/${searchText}`);
+   };
   return (
     <div>
       <div className="shortMessege" >משלוח חינם החל מ199👩‍💻</div>
-      <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary fixed-top custom-navbar">
-        <div className="container-fluid">
+      <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary custom-navbar">
+      <div className="container-fluid">
           <Link className="navbar-brand" to={routes.home}>Navbar</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -44,8 +49,8 @@ export default function NavBar() {
               </li>
             </ul>
             <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onBlur={(e) => setsearchText(e.target.value)}/>
+              <button className="btn btn-outline-success" type="submit" onClick={goToSearch}>Search</button>
             </form>
           </div>
         </div>

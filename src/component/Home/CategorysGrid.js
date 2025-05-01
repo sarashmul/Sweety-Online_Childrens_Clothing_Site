@@ -32,13 +32,13 @@ export default function CategorysGrid() {
       img: ImgBasic
     },
     {
-      name: "basic",
+      name: "sets",
       img: ImgBasic
     }])
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
+    setSelectedCategory(category.name);
   };
 
   return (
