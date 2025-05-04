@@ -6,44 +6,53 @@ export default function OrderSummary() {
   const shoppingProducts = useSelector((state) => state.shopCart.shopCartProducts);
   const shoppingSum = useSelector((state) => state.shopCart.sumToPay);
 
-
   const handleDeliveryChange = (event) => {
     setDeliveryOption(event.target.value);
   };
 
-  const totalPrice = deliveryOption === 'free' ? 1040 : 1055;
+  const deliveryPrice = deliveryOption === 'free' ? 0 : 15;
+  const totalPrice = shoppingSum + deliveryPrice;
 
   return (
-    <div className="card shadow-sm">
-      <div className="card-body">
-        <h4 className="mb-4 border-bottom pb-2">סיכום הזמנה</h4>
+    <div>
+      <div className="p-3">
+        <h4 className="mb-3 border-bottom pb-2 text-center fw-bold">סיכום הזמנה</h4>
 
-        <div className="d-flex justify-content-between py-2">
-          <p className="fw-bold mb-0">פרטי ההזמנה</p>
-          <p className="text-muted mb-0">
-            <span className="fw-bold me-2">סה״כ:</span>  {shoppingSum} ש"ח
-          </p>
+        {/* רשימת מוצרים */}
+        <div className="mb-3">
+          <p className="fw-bold mb-2">המוצרים בעגלה:</p>
+          {shoppingProducts.map((product, index) => (
+            <div key={index} className="d-flex justify-content-between small border-bottom py-1">
+              <div>
+                <span className="fw-bold">{product.name}</span>
+                {product.size && (
+                  <span className="text-muted ms-2">(מידה: {product.size})</span>
+                )}
+              </div>
+              <span className="fw-bold">{product.price} ש"ח</span>
+            </div>
+          ))}
         </div>
 
+        {/* פרטי הזמנה */}
         <div className="d-flex justify-content-between py-2">
-          <p className="text-muted mb-0">מס׳ חשבונית: 788152</p>
-          <p className="text-muted mb-0">
-            <span className="fw-bold me-2">הנחה:</span> $19.00
-          </p>
+          <span className="fw-bold">פרטי ההזמנה:</span>
+          <span><strong>{shoppingSum} ש"ח</strong></span>
         </div>
 
-        <div className="d-flex justify-content-between py-2">
-          <p className="text-muted mb-0">תאריך חשבונית: 22 Dec, 2019</p>
-          <p className="text-muted mb-0">
-            <span className="fw-bold me-2">מע״מ 18%:</span> $123
-          </p>
+        <div className="d-flex justify-content-between py-2 text-muted small">
+          <span>מס׳ חשבונית: 788152</span>
+          <span>הנחה: <strong>19 ש"ח</strong></span>
         </div>
 
-        <div className="d-flex justify-content-between py-2 mb-4">
-          <p className="text-muted mb-0">שובר קבלה: 18KU-62IIK</p>
-          <p className="text-muted mb-0">
-            <span className="fw-bold me-2">משלוח:</span> {deliveryOption === 'free' ? 'חינם' : '$15'}
-          </p>
+        <div className="d-flex justify-content-between py-2 text-muted small">
+          <span>תאריך חשבונית: 22 דצמבר 2019</span>
+          <span>מע״מ 18%: <strong>123 ש"ח</strong></span>
+        </div>
+
+        <div className="d-flex justify-content-between py-2 mb-4 text-muted small">
+          <span>שובר קבלה: 18KU-62IIK</span>
+          <span>משלוח: <strong>{deliveryOption === 'free' ? 'חינם' : '15 ש"ח'}</strong></span>
         </div>
 
         {/* אפשרויות משלוח */}
@@ -74,17 +83,17 @@ export default function OrderSummary() {
               onChange={handleDeliveryChange}
             />
             <label className="form-check-label" htmlFor="expressDelivery">
-              משלוח אקספרס - $15 (עד 2 ימי עסקים)
+              משלוח אקספרס - 15 ש"ח (עד 2 ימי עסקים)
             </label>
           </div>
         </div>
       </div>
 
-      {/* סכום סופי - ללא שוליים מסביב, תופס את כל הרוחב */}
-      <div className="bg-primary text-white text-end px-4 py-4 rounded-bottom">
+      {/* סכום סופי */}
+      <div className="bg-primary text-white text-end px-4 py-3 rounded-bottom">
         <h5 className="mb-0">
           סה״כ לתשלום:
-          <span className="h3 ms-2">${totalPrice}</span>
+          <span className="h4 ms-2">{totalPrice} ש"ח</span>
         </h5>
       </div>
     </div>

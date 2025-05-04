@@ -86,3 +86,9 @@ html, body, #root, .app-container {
   padding: 10px;
   border-radius: 8px;
 }
+
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
