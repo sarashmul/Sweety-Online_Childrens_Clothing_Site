@@ -1,5 +1,5 @@
 import React from 'react'
-import './CardWrapper.css';
+// import './CardWrapper.css';
 
 export default function CardWrapper({ children }) {
     return (

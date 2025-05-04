@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 
 export default function CreditCardForm() {
     
@@ -16,7 +17,7 @@ export default function CreditCardForm() {
 
     return (
         <div className="container mt-5">
-            <h2>הכנס פרטי אשראי</h2>
+            <h5>פרטי אשראי</h5>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="cardNumber" className="form-label">מספר כרטיס אשראי</label>
