@@ -9,6 +9,7 @@ const initialState ={
         price: 120,
         description: "שמלה פחונית קלילה עם הדפס פרחים, מושלמת לקיץ.",
         imageUrl: "https://via.placeholder.com/300x400?text=שמלה",
+        amount:10,
       },
       {
         id: 2,
@@ -17,6 +18,7 @@ const initialState ={
         price: 250,
         description: "נעלי ספורט איכותיות לריצה ולהליכה יומיומית.",
         imageUrl: "https://via.placeholder.com/300x400?text=נעלי+ספורט",
+        amount:10,
       },
       {
         id: 3,
@@ -25,6 +27,7 @@ const initialState ={
         price: 180,
         description: "תיק גב מרווח ועמיד עם תאים מרובים.",
         imageUrl: "https://via.placeholder.com/300x400?text=תיק+גב",
+        amount:10,
       },
       {
         id: 4,
@@ -33,6 +36,7 @@ const initialState ={
         price: 70,
         description: "חולצת טי איכותית מ-100% כותנה, מתאימה ליום יום.",
         imageUrl: "https://via.placeholder.com/300x400?text=חולצת+טי",
+        amount:10,
       },
       {
         id: 5,
@@ -41,6 +45,7 @@ const initialState ={
         price: 320,
         description: "שעון יד יוקרתי בעיצוב מודרני.",
         imageUrl: "https://via.placeholder.com/300x400?text=שעון+יד",
+        amount:10,
       },
     ],
   

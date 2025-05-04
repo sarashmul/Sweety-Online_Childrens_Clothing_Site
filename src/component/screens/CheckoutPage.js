@@ -1,9 +1,11 @@
 import React from 'react'
+import OrderSummary from '../Checkout/OrderSummary'
+import { Card, Button } from 'react-bootstrap';
 
 export default function CheckoutPage() {
   return (
     <div>
-       <h1>CheckoutPage</h1>
+        <OrderSummary></OrderSummary>
     </div>
   )
 }
