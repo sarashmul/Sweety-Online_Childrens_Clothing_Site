@@ -79,7 +79,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { buy_products } from '../../redux/action';
 
 export default function CreditCardForm() {
-  const shopingProducts = useSelector((state) => state.shopCart.shopCartReduser);
+  const shopingProducts = useSelector((state) => state.shopCart.shopCartProducts);
+  console.log(shopingProducts);
+  
   const dispatch = useDispatch();
 
   const [cardNumber, setCardNumber] = useState('');
@@ -144,7 +146,7 @@ export default function CreditCardForm() {
             />
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" >
           שלח הזמנה
         </button>
       </form>
