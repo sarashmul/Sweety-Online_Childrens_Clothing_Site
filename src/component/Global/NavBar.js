@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link } from 'react-router-dom';
+import { FaShoppingCart } from "react-icons/fa";
+
 
 export default function NavBar() {
   const routes = {
@@ -22,7 +24,8 @@ export default function NavBar() {
               <Link className="nav-link active" aria-current="page" to={routes.home}>HomePage</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={routes.ShoppingCart}>ShoppingCart</Link>
+              <Link className="nav-link" to={routes.ShoppingCart}>      <FaShoppingCart size={24} color="black" />
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle" to={routes.product}>Product</Link>
