@@ -92,3 +92,9 @@ body {
   text-align: right;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.g-12{
+  direction: ltr;
+}
+.creditCard{
+  direction: ltr;
+}
