@@ -1,0 +1,41 @@
+/* .custom-navbar {
+    min-height: 80px; 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow:0 6px 6px rgba(0, 0, 0, 0.1) ;
+  } */
+
+  .custom-navbar {
+    position: relative;
+    min-height: 80px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+    z-index: 998; /* להוריד מתחת ל-sidebar וה-overlay */
+  }
+  
+
+ 
+      
+  /* .shortMessege {
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #ddd;
+    z-index: 1030;
+  } */
+
+  .shortMessege {
+    position: relative;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #ddd;
+    z-index: 997; /* פחות מה-sidebar */
+    position: relative; /* חובה אם z-index לא עובד */
+  }
+  

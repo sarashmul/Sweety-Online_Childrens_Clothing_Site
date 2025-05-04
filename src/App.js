@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css';
 import NavBar from './component/Global/NavBar';
 import Footer from './component/Global/Footer';
 import { Provider } from 'react-redux';
@@ -8,14 +9,18 @@ import HomePage from './component/screens/HomePage';
 import ProductsPage from './component/screens/ProductsPage';
 import ShoppingCartPage from './component/screens/ShoppingCartPage';
 import CheckoutPage from './component/screens/CheckoutPage';
-
+import ProductModal from './component/Products/ProductModal';
+import SortProduct from './component/Products/SortProduct';
 
 function App() {
   const routes = {
     home: "/",
-    product: "/product",
+    products: "/products",
     ShoppingCart: "/ShoppingCart",
-    Checkout: "/Checkout"
+    Checkout: "/Checkout",
+    product:"/productModal",
+    productsByCategory:"/productsByCategory",
+    search:"/SortProducts/:text"
   };
 
   return (
@@ -27,9 +32,12 @@ function App() {
       
           <Routes>
             <Route path={routes.home} element={<HomePage />} />
-            <Route path={routes.product} element={<ProductsPage />} />
+            <Route path={routes.products} element={<ProductsPage />} />
+            <Route path={routes.search} element={<SortProduct/>} />
             <Route path={routes.ShoppingCart} element={<ShoppingCartPage />} />
             <Route path={routes.Checkout} element={<CheckoutPage />} />
+            <Route path={routes.product} element={<ProductModal/>}/>
+            <Route path={routes.productsByCategory}element={<ProductsPage/>}/>
           </Routes>
 
           <Footer />
