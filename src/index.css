@@ -46,22 +46,28 @@ html, body, #root, .app-container {
   background: white;
   padding: 20px 15px 100px 15px;
   box-shadow: 2px 0 8px rgba(0,0,0,0.3);
-  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   transition: left 0.3s ease;
   z-index: 1500;
+  overflow: hidden; /* כדי שהכפתור לא יצא, אבל לא חוסם גלילה פנימית */
+}
+
+.cart-sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
 }
 
 .cart-sidebar.open {
   left: 0;
 }
 
-.cart-sidebar-content {
+/* .cart-sidebar-content {
   flex: 1;
   overflow-y: auto;
   padding-bottom: 15px;
-}
+} */
 
 .close-button {
   position: absolute;

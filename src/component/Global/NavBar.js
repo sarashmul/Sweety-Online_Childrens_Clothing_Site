@@ -15,6 +15,13 @@ export default function NavBar() {
   const goToSearch = () => {
     navigate(`/SortProducts/${searchText}`);
    };
+
+   
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      goToSearch();
+    }
+  };
   return (
     <div>
       <div className="shortMessege" >משלוח חינם החל מ199👩‍💻</div>
@@ -49,7 +56,7 @@ export default function NavBar() {
               </li>
             </ul>
             <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onBlur={(e) => setsearchText(e.target.value)}/>
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setsearchText(e.target.value)} onKeyDown={handleKeyDown} />
               <button className="btn btn-outline-success" type="submit" onClick={goToSearch}>Search</button>
             </form>
           </div>
