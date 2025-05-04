@@ -51,7 +51,7 @@ function ShopCartProductCard({ product, onRemove, onClick }) {
             onRemove(product);
           }}
         >
-          הסר מהעגלה
+          🗑
         </Button>
       </Card.Body>
     </Card>

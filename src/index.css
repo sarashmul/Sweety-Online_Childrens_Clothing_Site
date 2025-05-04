@@ -57,6 +57,13 @@ html, body, #root, .app-container {
   flex: 1;
   overflow-y: auto;
   margin-top: 10px;
+  scrollbar-width: none; /* עבור Firefox */
+  -ms-overflow-style: none; /* עבור IE ו-Edge */
+  overflow-x: hidden;
+}
+
+.cart-sidebar-content::-webkit-scrollbar {
+  display: none; /* עבור Chrome, Safari */
 }
 
 .cart-sidebar.open {
@@ -87,10 +94,40 @@ html, body, #root, .app-container {
   right: 15px;
 }
 
-.cart-summary {
+/* .cart-summary {
   background-color: #f8f9fa;
   padding: 10px;
   border-radius: 8px;
+} */
+
+.cart-summary-wrapper {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.cart-summary-wrapper.sidebar {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 10px 0 15px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+}
+
+.cart-summary {
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+.go-to-cart-button {
+  display: block;
+}
+
+.cart-content-page .go-to-cart-button {
+  display: none;
 }
 
 body {
@@ -103,4 +140,8 @@ body {
 }
 .creditCard{
   direction: ltr;
+}
+
+.mb-3{
+  text-align:center;
 }
