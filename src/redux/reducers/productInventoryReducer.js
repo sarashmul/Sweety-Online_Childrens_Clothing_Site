@@ -1,72 +1,140 @@
-import { BUY_PRODUCTS } from "../actinTipes";
-
-const initialState ={
-    products: [
-      {
-        id: 1,
-        name: "שמלה פרחונית",
-        category: "בגדים",
-        price: 120,
-        description: "שמלה פחונית קלילה עם הדפס פרחים, מושלמת לקיץ.",
-        imageUrl: "https://via.placeholder.com/300x400?text=שמלה",
-        amount:10,
-      },
-      {
-        id: 2,
-        name: "נעלי ספורט",
-        category: "נעליים",
-        price: 250,
-        description: "נעלי ספורט איכותיות לריצה ולהליכה יומיומית.",
-        imageUrl: "https://via.placeholder.com/300x400?text=נעלי+ספורט",
-        amount:10,
-      },
-      {
-        id: 3,
-        name: "תיק גב",
-        category: "girls",
-        price: 180,
-        description: "תיק גב מרווח ועמיד עם תאים מרובים.",
-        imageUrl: "https://via.placeholder.com/300x400?text=תיק+גב",
-        amount:10,
-      },
-      {
-        id: 4,
-        name: "חולצת טי",
-        category: "girls",
-        price: 70,
-        description: "חולצת טי איכותית מ-100% כותנה, מתאימה ליום יום.",
-        imageUrl: "https://via.placeholder.com/300x400?text=חולצת+טי",
-        amount:10,
-      },
-      {
-        id: 5,
-        name: "שעון יד",
-        category: "אקססוריז",
-        price: 320,
-        description: "שעון יד יוקרתי בעיצוב מודרני.",
-        imageUrl: "https://via.placeholder.com/300x400?text=שעון+יד",
-        amount:10,
-      },
-    ],
+// import { BUY_PRODUCTS } from "../actinTipes";
+// import { products } from "./products";
+// const initialState ={
+//     products: products
   
+// };
+
+// export const productInventoryReducer = (state = initialState, action) => {
+//   switch (action.type) {
+//     case BUY_PRODUCTS: {
+//       const boughtProducts = action.payload;
+//       return {
+//         ...state,
+//         products: state.products.map(product => {
+//           const boughtProduct = boughtProducts.find(p => p.id === product.id);
+//           if (boughtProduct) {
+//             return { ...product, amount: product.amount - 1 };
+//           }
+//           return product;
+//         })
+//       };
+//     }
+//     default:
+//       return state;
+//   }
+// }
+
+
+import { BUY_PRODUCTS } from "../actinTipes";
+import { products } from "./products";
+
+const initialState = {
+  products: products
 };
+
+// export const productInventoryReducer = (state = initialState, action) => {
+//   switch (action.type) {
+//     case BUY_PRODUCTS: {
+//       const boughtProducts = action.payload;
+//       return {
+//         ...state,
+//         products: state.products.map(product => {
+//           const boughtProduct = boughtProducts.find(p => p.id === product.id);
+//           if (boughtProduct) {
+//             const updatedSizes = product.sizes.map(sizeObj => {
+//               const [sizeKey, quantity] = Object.entries(sizeObj)[0];
+//               if (parseInt(sizeKey) === boughtProduct.selectedSize && quantity > 0) {
+//                 return { [sizeKey]: quantity - 1 };
+//               }
+//               return sizeObj;
+//             });
+
+//             return {
+//               ...product,
+//               sizes: updatedSizes
+//             };
+//           }
+//           return product;
+//         })
+//       };
+//     }
+
+//     default:
+//       return state;
+//   }
+// };
+
+
+
+
+
+// export const productInventoryReducer = (state = initialState, action) => {
+//   switch (action.type) {
+//     case BUY_PRODUCTS: {
+//       const boughtProducts = action.payload;
+
+//       return {
+//         ...state,
+//         products: state.products.map(product => {
+//           const boughtProduct = boughtProducts.find(p => p.id === product.id);
+//           if (!boughtProduct) return product;
+
+//           const updatedSizes = product.sizes.map(sizeObj => {
+//             const sizeKey = Object.keys(sizeObj)[0];
+//             const sizeValue = sizeObj[sizeKey];
+
+//             if (parseInt(sizeKey) === boughtProduct.selectedSize && sizeValue > 0) {
+//               return { [sizeKey]: sizeValue - 1 };
+//             }
+
+//             return sizeObj;
+//           });
+
+//           return {
+//             ...product,
+//             sizes: updatedSizes
+//           };
+//         })
+//       };
+//     }
+
+//     default:
+//       return state;
+//   }
+// };
+
+
 
 export const productInventoryReducer = (state = initialState, action) => {
   switch (action.type) {
     case BUY_PRODUCTS: {
+      console.log("BUY_PRODUCTS fired", action.payload);
+      console.log("BUY_PRODUCTS stay", products);
+
       const boughtProducts = action.payload;
+      debugger
       return {
         ...state,
         products: state.products.map(product => {
           const boughtProduct = boughtProducts.find(p => p.id === product.id);
-          if (boughtProduct) {
-            return { ...product, amount: product.amount - 1 };
-          }
-          return product;
+          if (!boughtProduct) return product;
+
+          const sizeToReduce = boughtProduct.selectedSize;
+          const updatedSizes = {
+            ...product.sizes,
+            [sizeToReduce]: Math.max(0, (product.sizes[sizeToReduce] || 0) - 1)
+          };
+
+          return {
+            ...product,
+            sizes: updatedSizes
+          };
         })
       };
     }
+
     default:
       return state;
   }
-}
+};
