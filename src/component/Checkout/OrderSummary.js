@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 export default function OrderSummary() {
   const [deliveryOption, setDeliveryOption] = useState('free');
   const shoppingProducts = useSelector((state) => state.shopCart.shopCartProducts);
-  const shoppingSum = useSelector((state) => state.shopCart.sumToPay);
-
+  // const shoppingSum = useSelector((state) => state.shopCart.sumToPay);
+  const shoppingSum=useMemo(()=>{
+    return shoppingProducts.reduce((sum, p)=> sum+p.price, 0);
+  },[shoppingProducts]);
+  
   const handleDeliveryChange = (event) => {
     setDeliveryOption(event.target.value);
   };
@@ -25,8 +28,8 @@ export default function OrderSummary() {
             <div key={index} className="d-flex justify-content-between small border-bottom py-1">
               <div>
                 <span className="fw-bold">{product.name}</span>
-                {product.size && (
-                  <span className="text-muted ms-2">(מידה: {product.size})</span>
+                {product.selectedSize && (
+                  <span className="text-muted ms-2">(מידה: {product.selectedSize})</span>
                 )}
               </div>
               <span className="fw-bold">{product.price} ש"ח</span>

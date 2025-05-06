@@ -1,37 +1,24 @@
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ProductCard from '../Products/ProductCard';
-import ProductModal from '../Products/ProductModal';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-
 export default function ProductsPage() {
-
-
-  const { search } = useLocation();
-  const query = new URLSearchParams(search);
-  const category = query.get('category') || '';
-  const subCategory = query.get('tat_category') || '';
-
-
-
-  const routes = {
-    product: "/productModal"
-  };
-
+  const location = useLocation();
+  const { category } = location.state || {};
   const navigate = useNavigate();
 
-  const goToProduct = (selectedProduct) => {
-    navigate(routes.product, { state: { product: selectedProduct } })
-
-  }
-
-
   const products = useSelector((state) => state.productInventory.products);
-
   const [selectedProduct, setSelectedProduct] = useState(null);
+  console.log("ProductsPage", products);
+
+  useEffect(() => {
+    if (selectedProduct) {
+      navigate('/productModal', { state: { product: selectedProduct } });
+    }
+  }, [selectedProduct, navigate]);
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
@@ -61,13 +48,6 @@ export default function ProductsPage() {
           ))}
       </div>
 
-
-
-      {selectedProduct && (
-        goToProduct(selectedProduct)
-      )}
     </div>
-
-  )
-
+  );
 }

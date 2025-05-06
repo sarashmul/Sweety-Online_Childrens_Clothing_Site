@@ -1,85 +1,9 @@
-// import React from 'react'
-// import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { buy_products } from '../../redux/action';
-// import { useSelector } from 'react-redux';
-
-// export default function CreditCardForm() {
-//     const shopingProducts = useSelector((state) => state.shopCart.shopCartReduser);
-
-//     const dispach=useDispatch();
-//     const [cardNumber, setCardNumber] = useState('');
-//     const [cvv, setCvv] = useState('');
-//     const [idNumber, setIdNumber] = useState('');
-
-//     const handleSubmit = (event) => {
-//         event.preventDefault();
-//         // כאן ניתן לבצע שליחה או עיבוד של הנתונים
-//         console.log('Number:', cardNumber);
-//         console.log('CVV:', cvv);
-//         console.log('ID:', idNumber);
-//     };
-
-//     return (
-//         <div className="container mt-5">
-//             <h5>פרטי אשראי</h5>
-//             <form onSubmit={handleSubmit}>
-//                 <div className="mb-3">
-//                     <label htmlFor="cardNumber" className="form-label">מספר כרטיס אשראי</label>
-//                     <input
-//                         type="text"
-//                         className="form-control"
-//                         id="cardNumber"
-//                         value={cardNumber}
-//                         onChange={(e) => setCardNumber(e.target.value)}
-//                         placeholder="XXXX XXXX XXXX XXXX"
-//                         required
-//                     />
-//                 </div>
-//                 <div className="row">
-//                     <div className="col-md-6 mb-3">
-//                         <label htmlFor="cvv" className="form-label">קוד CVV</label>
-//                         <input
-//                             type="text"
-//                             className="form-control"
-//                             id="cvv"
-//                             value={cvv}
-//                             onChange={(e) => setCvv(e.target.value)}
-//                             placeholder="XXX"
-//                             maxLength="3"
-//                             required
-//                         />
-//                     </div>
-//                     <div className="col-md-6 mb-3">
-//                         <label htmlFor="idNumber" className="form-label">תעודת זהות</label>
-//                         <input
-//                             type="text"
-//                             className="form-control"
-//                             id="idNumber"
-//                             value={idNumber}
-//                             onChange={(e) => setIdNumber(e.target.value)}
-//                             placeholder="תעודת זהות"
-//                             required
-//                         />
-//                     </div>
-//                 </div>
-//                 <button type="submit" className="btn btn-primary" onClick={dispach(buy_products(shopingProducts))} >שלח הזמנה</button>
-//             </form>
-//         </div>
-
-
-
-
-//     )
-// }
-
-
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
+import { useSelector,useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { buy_products } from '../../redux/action';
-
 export default function CreditCardForm() {
-  const shopingProducts = useSelector((state) => state.shopCart.shopCartReduser);
+  const shopingProducts = useSelector((state) => state.shopCart.shopCartProducts);
   const dispatch = useDispatch();
 
   const [cardNumber, setCardNumber] = useState('');
@@ -94,10 +18,12 @@ export default function CreditCardForm() {
     console.log('ID:', idNumber);
 
     // שליחת ההזמנה רק אם יש מוצרים
-    if (Array.isArray(shopingProducts) && shopingProducts.length > 0) {
-      dispatch(buy_products(shopingProducts));
-    } else {
-      console.warn("לא נבחרו מוצרים להזמנה");
+    // if (Array.isArray(shopingProducts) && shopingProducts.length > 0) {
+      console.log('Payload sent to action:', shopingProducts);
+
+   { dispatch(buy_products(shopingProducts));
+    // } else {
+      // console.warn("לא נבחרו מוצרים להזמנה");
     }
   };
 
