@@ -1,5 +1,7 @@
 import './App.css';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import NavBar from './component/Global/NavBar';
 import Footer from './component/Global/Footer';
 import { Provider } from 'react-redux';

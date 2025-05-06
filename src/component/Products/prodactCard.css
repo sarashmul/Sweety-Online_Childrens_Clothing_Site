@@ -1,0 +1,13 @@
+.card-img {
+    transition: transform 0.5s ease;
+  }
+  
+  .card:hover .card-img {
+    transform: scale(1.1);
+  }
+  
+  .card {
+    overflow: hidden;
+    /* הסרנו את אפקט הצל */
+  }
+  

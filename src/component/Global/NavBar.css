@@ -1,41 +1,80 @@
-/* .custom-navbar {
-    min-height: 80px; 
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    box-shadow:0 6px 6px rgba(0, 0, 0, 0.1) ;
-  } */
 
-  .custom-navbar {
-    position: relative;
-    min-height: 80px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
-    z-index: 998; /* להוריד מתחת ל-sidebar וה-overlay */
-  }
-  
+.custom-navbar {
+  position: fixed;  /* גורם ל-navbar להידבק באופן קבוע */
+  top: 0;  /* מתחיל להידבק מייד עם הגלילה */
+  left: 0;
+  width: 100%;
+  min-height: 80px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #ffffff8e;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* לוודא שהוא יהיה מעל כותרת */
+}
 
- 
-      
-  /* .shortMessege {
-    background-color: #f8f9fa;
-    color: #333;
-    text-align: center;
-    padding: 0.5rem;
-    font-size: 0.95rem;
-    border-bottom: 1px solid #ddd;
-    z-index: 1030;
-  } */
+/* ריווח גוף הדף כדי שה-navbar לא יתנגש עם התוכן */
+body {
+  padding-top: 110px; /* ריווח עבור התוכן שיתחיל אחרי ה-header */
+}
 
-  .shortMessege {
-    position: relative;
-    background-color: #f8f9fa;
-    color: #333;
-    text-align: center;
-    padding: 0.5rem;
-    font-size: 0.95rem;
-    border-bottom: 1px solid #ddd;
-    z-index: 997; /* פחות מה-sidebar */
-    position: relative; /* חובה אם z-index לא עובד */
-  }
-  
+
+/* טקסט אדום - ל-SALE */
+.red-text {
+  color: red;
+}
+
+/* תפריט נפתח */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.custom-dropdown-menu {
+  min-width: 140px;
+  text-align: center;
+  padding: 0;
+  border-radius: 0;
+  position: absolute;
+  left: 0;
+  transform: translateX(-50px);
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  z-index: 999;
+}
+
+.custom-dropdown-item {
+  border-bottom: 1px solid #e0e0e0 !important;
+  padding: 8px 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.custom-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.custom-dropdown-item:hover {
+  background-color: #a1caf3;
+}
+
+/* חץ ליד כותרת תפריט נפתח */
+.nav-item.dropdown > .nav-link::after {
+  content: " ▼";
+  font-size: 0.75em;
+}
+
+/* ריווח בין פריטי תפריט */
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: auto;
+  gap: 35px;
+}
+
+/* עגלת קניות */
+.navbar-nav .shopping-cart {
+  margin-left: auto;
+}
