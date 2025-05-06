@@ -9,7 +9,7 @@ export const shopCartReduser  = (state = initialState, action) => {
             return{...state,shopCartProducts:[action.payload,...state.shopCartProducts]};
         };
         case REMOVE_PRODUCT:{
-            return{...state,shopCartProducts:state.shopCartProducts.filter(shopCartProduct => shopCartProduct.id !== action.payload.id)};
+            return{...state,shopCartProducts:state.shopCartProducts.filter(shopCartProduct => shopCartProduct.uniqueId !== action.payload.uniqueId)};
         }
         case BUY_PRODUCTS:{
             return{...state,shopCartProducts:[]};

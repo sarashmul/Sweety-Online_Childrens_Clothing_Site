@@ -3,7 +3,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { buy_products } from '../../redux/action';
 export default function CreditCardForm() {
-  const shopingProducts = useSelector((state) => state.shopCart.shopCartReduser);
+  const shopingProducts = useSelector((state) => state.shopCart.shopCartProducts);
   const dispatch = useDispatch();
 
   const [cardNumber, setCardNumber] = useState('');
@@ -18,10 +18,12 @@ export default function CreditCardForm() {
     console.log('ID:', idNumber);
 
     // שליחת ההזמנה רק אם יש מוצרים
-    if (Array.isArray(shopingProducts) && shopingProducts.length > 0) {
-      dispatch(buy_products(shopingProducts));
-    } else {
-      console.warn("לא נבחרו מוצרים להזמנה");
+    // if (Array.isArray(shopingProducts) && shopingProducts.length > 0) {
+      console.log('Payload sent to action:', shopingProducts);
+
+   { dispatch(buy_products(shopingProducts));
+    // } else {
+      // console.warn("לא נבחרו מוצרים להזמנה");
     }
   };
 

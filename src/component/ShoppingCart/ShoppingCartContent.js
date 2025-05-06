@@ -101,7 +101,7 @@ export default function ShoppingCartContent({ isSidebar, onCloseSidebar }) {
     const totalPrice=useMemo(()=>{
       return shopCartProducts.reduce((sum, p)=> sum+p.price, 0);
     },[shopCartProducts]);
-
+    console.log(shopCartProducts);
   return (
     <div className={isSidebar ? "cart-content-sidebar" : "cart-content-page"}>
       {shopCartProducts.length === 0 ? (
@@ -110,13 +110,15 @@ export default function ShoppingCartContent({ isSidebar, onCloseSidebar }) {
         <>
           <Row xs={1} className="g-3 mb-4">
             {shopCartProducts.map(product => (
-              <Col key={product.id}>
+              // <Col key={product.id}>
+              <Col key={product.uniqueId}>
                 <ShopCartProductCard
                   product={product}
                   onRemove={handleRemove}
                   onClick={ProductCartClick}
                 />
               </Col>
+              
             ))}
           </Row>
           

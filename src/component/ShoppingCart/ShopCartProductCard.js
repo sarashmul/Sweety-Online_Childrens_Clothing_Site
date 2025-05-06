@@ -42,7 +42,9 @@ function ShopCartProductCard({ product, onRemove, onClick }) {
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>
           <strong>מחיר:</strong> ₪{product.price}<br />
-          <strong>כמות:</strong> {product.amount}
+          {/* <strong>כמות:</strong> {product.amount} */}
+          <strong>מידה:</strong> {product.selectedSize}
+
         </Card.Text>
         <Button 
           variant="danger" 
