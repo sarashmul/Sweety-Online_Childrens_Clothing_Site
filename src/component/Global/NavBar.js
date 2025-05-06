@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './NavBar.css'
+import './NavBar.css';
+
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from 'react-icons/fa';
 
@@ -10,88 +11,101 @@ export default function NavBar() {
     products: "/products",
     ShoppingCart: "/ShoppingCart",
     Checkout: "/Checkout",
-    SortProduct: "/SortProduct"
+    SortProduct: "/SortProduct",
   };
-  const [searchText, setsearchText] = useState('');
+
+  const [searchText, setSearchText] = useState('');
   const navigate = useNavigate();
+
   const goToSearch = () => {
-    navigate(`/SortProducts/${searchText}`);
+    if (searchText.trim()) {
+      navigate(`/SortProducts/${searchText}`);
+    }
   };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
+      e.preventDefault();
       goToSearch();
     }
   };
 
   return (
-    <div>
-      
-      <nav className="navbar fixed-top navbar-expand-lg  custom-navbar">
-        <div className="container-fluid">
+    <nav className="navbar fixed-top navbar-expand-lg custom-navbar">
+      <div className="container-fluid">
 
-          <Link className="navbar-brand" to={routes.home}>Navbar</Link>
+        <Link className="navbar-brand" to={routes.home}>Navbar</Link>
 
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-              <li className="nav-item dropdown">
-                <Link className="nav-link" to={`${routes.products}?category=בנים`}>בנים</Link>
-                <ul className="dropdown-menu custom-dropdown-menu">
-                  <li><Link to={`${routes.products}?category=בנים&tat_category=חולצות`} className="dropdown-item custom-dropdown-item">חולצות</Link></li>
-                  <li><Link to={`${routes.products}?category=בנים&tat_category=מכנסיים`} className="dropdown-item custom-dropdown-item">מכנסיים</Link></li>
-                  <li><Link to={`${routes.products}?category=בנים&tat_category=סריגים`} className="dropdown-item custom-dropdown-item">סריגים</Link></li>
-                  <li><Link to={`${routes.products}?category=בנים&tat_category=משהו אחר`} className="dropdown-item custom-dropdown-item">משהו אחר</Link></li>
-                </ul>
-              </li>
+            {/* קטגוריית בנים */}
+            <li className="nav-item dropdown">
+              <Link className="nav-link" to={`${routes.products}?category=בנים`}>בנים</Link>
+              <ul className="dropdown-menu custom-dropdown-menu">
+                <li><Link to={`${routes.products}?category=בנים&tat_category=חולצות`} className="dropdown-item custom-dropdown-item">חולצות</Link></li>
+                <li><Link to={`${routes.products}?category=בנים&tat_category=מכנסיים`} className="dropdown-item custom-dropdown-item">מכנסיים</Link></li>
+                <li><Link to={`${routes.products}?category=בנים&tat_category=סריגים`} className="dropdown-item custom-dropdown-item">סריגים</Link></li>
+                <li><Link to={`${routes.products}?category=בנים&tat_category=משהו אחר`} className="dropdown-item custom-dropdown-item">משהו אחר</Link></li>
+              </ul>
+            </li>
 
-              <li className="nav-item dropdown">
-                <Link className="nav-link" to={`${routes.products}?category=בנות`}>בנות</Link>
-                <ul className="dropdown-menu custom-dropdown-menu">
-                  <li><Link to={`${routes.products}?category=בנות&tat_category=חולצות`} className="dropdown-item custom-dropdown-item">חולצות</Link></li>
-                  <li><Link to={`${routes.products}?category=בנות&tat_category=שמלות`} className="dropdown-item custom-dropdown-item">שמלות</Link></li>
-                  <li><Link to={`${routes.products}?category=בנות&tat_category=סריגים וסוודרים`} className="dropdown-item custom-dropdown-item">סריגים וסוודרים</Link></li>
-                  <li><Link to={`${routes.products}?category=בנות&tat_category=חצאיות`} className="dropdown-item custom-dropdown-item">חצאיות</Link></li>
-                  <li><Link to={`${routes.products}?category=בנות&tat_category=אקססוריז`} className="dropdown-item custom-dropdown-item">אקססוריז</Link></li>
-                </ul>
-              </li>
+            {/* קטגוריית בנות */}
+            <li className="nav-item dropdown">
+              <Link className="nav-link" to={`${routes.products}?category=בנות`}>בנות</Link>
+              <ul className="dropdown-menu custom-dropdown-menu">
+                <li><Link to={`${routes.products}?category=בנות&tat_category=חולצות`} className="dropdown-item custom-dropdown-item">חולצות</Link></li>
+                <li><Link to={`${routes.products}?category=בנות&tat_category=שמלות`} className="dropdown-item custom-dropdown-item">שמלות</Link></li>
+                <li><Link to={`${routes.products}?category=בנות&tat_category=סריגים וסוודרים`} className="dropdown-item custom-dropdown-item">סריגים וסוודרים</Link></li>
+                <li><Link to={`${routes.products}?category=בנות&tat_category=חצאיות`} className="dropdown-item custom-dropdown-item">חצאיות</Link></li>
+                <li><Link to={`${routes.products}?category=בנות&tat_category=אקססוריז`} className="dropdown-item custom-dropdown-item">אקססוריז</Link></li>
+              </ul>
+            </li>
 
-              <li className="nav-item">
-                <Link className="nav-link" to={`${routes.products}?category=בייבי`}>בייבי </Link>
-              </li>
+            {/* קטגוריות נוספות */}
+            <li className="nav-item">
+              <Link className="nav-link" to={`${routes.products}?category=בייבי`}>בייבי</Link>
+            </li>
 
-              <li className="nav-item">
-                <Link className="nav-link" to={`${routes.products}?category=basic`}>basic</Link>
-              </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={`${routes.products}?category=basic`}>basic</Link>
+            </li>
 
-              <li className="nav-item">
-                <Link className="nav-link red-text" to={`${routes.products}?category=sale`}>SALE</Link>
-              </li>
+            <li className="nav-item">
+              <Link className="nav-link red-text" to={`${routes.products}?category=sale`}>SALE</Link>
+            </li>
+          </ul>
 
-            </ul>
+          {/* אייקון עגלה */}
+          <ul className="navbar-nav">
+            <li className="nav-item shopping-cart">
+              <Link className="nav-link" to={routes.ShoppingCart}>
+                <FaShoppingCart size={20} />
+              </Link>
+            </li>
+          </ul>
 
-            <ul className="navbar-nav">
-              <li className="nav-item shopping-cart">
-                <Link className="nav-link" to={routes.ShoppingCart}>
-                  <FaShoppingCart size={20} />
-                </Link>
-              </li>
-            </ul>
-
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setsearchText(e.target.value)} onKeyDown={handleKeyDown} />
-              <button className="btn btn-outline-success" type="submit" onClick={goToSearch}>
+          {/* שורת חיפוש */}
+          <form className="d-flex" role="search" onSubmit={(e) => { e.preventDefault(); goToSearch(); }}>
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              onKeyDown={handleKeyDown}
+            />
+            <button className="btn btn-outline-success" type="submit">
               <FaSearch />
-              </button>
-            </form>
-          </div>
-
+            </button>
+          </form>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }

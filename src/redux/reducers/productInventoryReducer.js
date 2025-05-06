@@ -1,6 +1,6 @@
 
 import { products } from "./products";
-
+import { BUY_PRODUCTS } from "../actinTipes";
 const initialState = {
   products: products
 

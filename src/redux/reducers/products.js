@@ -61,8 +61,7 @@
 //     },
 //   ];
 
-  import ImgGirls from './girls.jpg';
-
+import {imagesarray} from './importImages';
 
   export const products= [
     // בנים
@@ -73,7 +72,7 @@
       tat_category: "חולצות",
       price: 50,
       description: "חולצת טי עם הדפס מדליק לבנים.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -85,7 +84,7 @@
       tat_category: "מכנסיים",
       price: 70,
       description: "מכנסיים נוחים לימי הקיץ החמים.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -97,7 +96,7 @@
       tat_category: "סריגים",
       price: 90,
       description: "סריג חמים עם צווארון עגול.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -109,7 +108,7 @@
       tat_category: "משהו אחר",
       price: 110,
       description: "ג׳קט אופנתי לבנים לערב.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -122,7 +121,7 @@
       tat_category: "חולצות",
       price: 60,
       description: "חולצת פולו איכותית ונעימה.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -135,7 +134,7 @@
       tat_category: "משהו אחר",
       price: 95,
       description: "טרנינג מושלם לפעילות ספורטיבית.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -150,7 +149,7 @@
       tat_category: "חולצות",
       price: 65,
       description: "חולצה אלגנטית עם כפתורים.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -163,7 +162,7 @@
       tat_category: "שמלות",
       price: 120,
       description: "שמלה קלילה עם הדפס פרחים.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -176,7 +175,7 @@
       tat_category: "סריגים וסוודרים",
       price: 85,
       description: "סוודר רך ומחמם לימי החורף.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -189,7 +188,7 @@
       tat_category: "חצאיות",
       price: 75,
       description: "חצאית ג׳ינס עם גומי נוח.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -202,7 +201,7 @@
       tat_category: "אקססוריז",
       price: 30,
       description: "קשת לשיער עם עיצוב פרחוני.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -215,7 +214,7 @@
       tat_category: "חולצות",
       price: 50,
       description: "טישרט עם הדפס צבעוני ומשמח.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -228,7 +227,7 @@
       tat_category: "שמלות",
       price: 130,
       description: "אוברול עם גזרה נשפכת ובד נעים.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -243,7 +242,7 @@
       tat_category: "חולצות",
       price: 25,
       description: "גופיה פשוטה ליום-יום.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -256,7 +255,7 @@
       tat_category: "מכנסיים",
       price: 35,
       description: "טייץ נוח לפעילות או ללבוש יומיומי.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -269,7 +268,7 @@
       tat_category: "חולצות",
       price: 30,
       description: "חולצה בסיסית ונוחה ליום-יום.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -282,7 +281,7 @@
       tat_category: "חולצות",
       price: 28,
       description: "גופיה עם כפתורים, גזרה נוחה.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -297,7 +296,7 @@
       tat_category: "חולצות",
       price: 60,
       description: "אוברול רך לתינוקות, 100% כותנה.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -310,7 +309,7 @@
       tat_category: "מכנסיים",
       price: 40,
       description: "מכנסיים גמישים ונעימים במיוחד.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -323,7 +322,7 @@
       tat_category: "חולצות",
       price: 75,
       description: "שלישיית בגדי גוף במגוון צבעים.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -336,7 +335,7 @@
       tat_category: "משהו אחר",
       price: 35,
       description: "כובע חורף לתינוק עם אוזניים חמודות.",
-      imageUrl: ImgGirls,
+      imageUrl: imagesarray[0],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
