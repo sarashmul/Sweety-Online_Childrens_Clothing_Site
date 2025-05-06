@@ -9,7 +9,7 @@ export default function NavBar() {
     products: "/products",
     ShoppingCart: "/ShoppingCart",
     Checkout: "/Checkout",
-    SortProduct: "/SortProduct",
+    search: "/SortProducts",
   };
 
   const [searchText, setSearchText] = useState('');
@@ -17,8 +17,8 @@ export default function NavBar() {
 
   const goToSearch = () => {
     if (searchText.trim()) {
-      navigate(`${routes.SortProduct}/${searchText}`);
-    }
+      console.log(searchText);
+      navigate(`${routes.search}/${encodeURIComponent(searchText)}`);    }
   };
 
   const handleKeyDown = (e) => {

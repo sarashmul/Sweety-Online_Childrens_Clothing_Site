@@ -5,7 +5,8 @@ import ProductCard from "./ProductCard";
 
 export default function SortProduct() {
 const {text}=useParams();
-const print=()=>{console.log(text);}
+const searchText = decodeURIComponent(text || "");
+const print=()=>{console.log(searchText);}
 print();
 const products = useSelector((state) => state.productInventory.products);
 
@@ -32,7 +33,7 @@ function normalizeHebrew(texty) {
         .replace("ץ", "צ")
     )
     .replace(/[^a-zA-Zא-ת0-9\s]/g, "")// מסיר תווים לא אותיות/מספרים/רווחים
-    .replace(/[תהי]/g, "") // מסיר גם את האותיות ת ו-י
+    .replace(/[תהוי]/g, "") // מסיר גם את האותיות ת ו-י
     .toLowerCase();
   }
 
@@ -59,7 +60,7 @@ const handleProductClick=(selectedProduct)=>{
         <div className="container mt-5">
       <div className="row">
         {products
-          .filter((product) => !text || searchMatch(product.description,text))
+          .filter((product) => !searchText || searchMatch(product.description,searchText))
           .map((product) => (
             <div key={product.id} className="col-md-4 mb-4">
               <ProductCard
