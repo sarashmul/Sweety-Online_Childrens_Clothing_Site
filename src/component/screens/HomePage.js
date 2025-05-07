@@ -60,13 +60,13 @@ export default function HomePage() {
 
       {/* אזור נוסף - מבצעים */}
       <section className="promo-section">
-        <h2>מבצעים</h2>
-        <div className="promo-boxes">
-          <div className="promo-box">👕 3 חולצות ב-99 ₪</div>
-          <div className="promo-box">👶 קולקציית בייבי חדשה</div>
-          <div className="promo-box">🎁 קבלו 10% הנחה בהרשמה</div>
-        </div>
-      </section>
+  <h2>מבצעים</h2>
+  <div className="promo-boxes">
+    <div className="promo-box">3 חולצות ב-99 ₪</div>
+    <div className="promo-box">קולקציית בייבי חדשה</div>
+    <div className="promo-box">קבלו 10% הנחה בהרשמה</div>
+  </div>
+</section>
 
      
     </div>

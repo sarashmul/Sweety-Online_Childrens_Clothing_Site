@@ -27,7 +27,37 @@ html, body, #root, .app-container {
   margin-top: auto;
 }
 
+.btn {
+  background-color: #f6e1d3 !important;  /* פודרה עדינה עם גוון חמים */
+  border-color: #f6e1d3 !important;
+  color: #fff !important;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
 
+.btn:hover,
+.btn:focus {
+  background-color: #e4d0c3 !important;  /* כהה יותר מעט לריחוף עם גוון פודרה */
+  border-color: #e4d0c3 !important;
+  color: #fff !important;
+}
+
+/* Button.css */
+/* עיצוב ספציפי לכפתור הפח */
+.btn.btn-icon {
+  color: #000 !important; /* צבע שחור */
+  font-size: 1.5rem; /* גודל האייקון */
+  background-color: transparent !important; /* רקע שקוף */
+  border: none !important; /* ביטול גבולות */
+  padding: 0 !important; /* ביטול ריפוד */
+  transition: color 0.3s ease; /* אפקט צבע על ריחוף */
+}
+
+.btn.btn-icon:hover,
+.btn.btn-icon:focus {
+  color: #555 !important; /* צבע כהה יותר בעת ריחוף */
+  outline: none; /* ביטול קו מסביב בעת התמקדות */
+}
 .cart-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -70,11 +100,36 @@ html, body, #root, .app-container {
   left: 0;
 }
 
+
 /* .cart-sidebar-content {
   flex: 1;
   overflow-y: auto;
   padding-bottom: 15px;
 } */
+
+
+/* עיצוב התמונה של המוצר */
+.product-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.product-image-container {
+  width: 100px;  /* גודל מרובע קבוע */
+  height: 100px; /* גובה מרובע קבוע */
+  margin-right: 10px; /* רווח בין התמונה לשאר התוכן */
+  overflow: hidden;  /* מוודא שהתמונה לא תצא מגבולות התיבה */
+  border-radius: 8px;  /* אם תרצה לקצץ את הפינות של התמונה */
+}
+
+.product-image {
+  width: 100%;  /* תמונה ממלאת את התיבה */
+  height: 100%; /* שמירה על פרופורציות התמונה */
+  object-fit: cover;  /* ממלא את התיבה בלי לעוות את התמונה */
+}
 
 .close-button {
   position: absolute;

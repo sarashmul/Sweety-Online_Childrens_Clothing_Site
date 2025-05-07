@@ -84,7 +84,7 @@ import {imagesarray} from './importImages';
       tat_category: "מכנסיים",
       price: 70,
       description: "מכנסיים נוחים לימי הקיץ החמים.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[1],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -96,7 +96,7 @@ import {imagesarray} from './importImages';
       tat_category: "סריגים",
       price: 90,
       description: "סריג חמים עם צווארון עגול.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[2],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -108,7 +108,7 @@ import {imagesarray} from './importImages';
       tat_category: "משהו אחר",
       price: 110,
       description: "ג׳קט אופנתי לבנים לערב.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[3],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -121,7 +121,7 @@ import {imagesarray} from './importImages';
       tat_category: "חולצות",
       price: 60,
       description: "חולצת פולו איכותית ונעימה.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[4],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -134,7 +134,7 @@ import {imagesarray} from './importImages';
       tat_category: "משהו אחר",
       price: 95,
       description: "טרנינג מושלם לפעילות ספורטיבית.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[5],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -149,7 +149,7 @@ import {imagesarray} from './importImages';
       tat_category: "חולצות",
       price: 65,
       description: "חולצה אלגנטית עם כפתורים.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[21],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -162,7 +162,7 @@ import {imagesarray} from './importImages';
       tat_category: "שמלות",
       price: 120,
       description: "שמלה קלילה עם הדפס פרחים.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[22],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -175,7 +175,7 @@ import {imagesarray} from './importImages';
       tat_category: "סריגים וסוודרים",
       price: 85,
       description: "סוודר רך ומחמם לימי החורף.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[23],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -188,7 +188,7 @@ import {imagesarray} from './importImages';
       tat_category: "חצאיות",
       price: 75,
       description: "חצאית ג׳ינס עם גומי נוח.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[24],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -201,7 +201,7 @@ import {imagesarray} from './importImages';
       tat_category: "אקססוריז",
       price: 30,
       description: "קשת לשיער עם עיצוב פרחוני.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[25],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -214,7 +214,7 @@ import {imagesarray} from './importImages';
       tat_category: "חולצות",
       price: 50,
       description: "טישרט עם הדפס צבעוני ומשמח.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[26],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -227,7 +227,7 @@ import {imagesarray} from './importImages';
       tat_category: "שמלות",
       price: 130,
       description: "אוברול עם גזרה נשפכת ובד נעים.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[27],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -242,7 +242,7 @@ import {imagesarray} from './importImages';
       tat_category: "חולצות",
       price: 25,
       description: "גופיה פשוטה ליום-יום.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[28],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -255,7 +255,7 @@ import {imagesarray} from './importImages';
       tat_category: "מכנסיים",
       price: 35,
       description: "טייץ נוח לפעילות או ללבוש יומיומי.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[29],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -268,7 +268,7 @@ import {imagesarray} from './importImages';
       tat_category: "חולצות",
       price: 30,
       description: "חולצה בסיסית ונוחה ליום-יום.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[30],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -281,7 +281,7 @@ import {imagesarray} from './importImages';
       tat_category: "חולצות",
       price: 28,
       description: "גופיה עם כפתורים, גזרה נוחה.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[31],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -296,7 +296,7 @@ import {imagesarray} from './importImages';
       tat_category: "חולצות",
       price: 60,
       description: "אוברול רך לתינוקות, 100% כותנה.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[32],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -309,7 +309,7 @@ import {imagesarray} from './importImages';
       tat_category: "מכנסיים",
       price: 40,
       description: "מכנסיים גמישים ונעימים במיוחד.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[33],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -322,7 +322,7 @@ import {imagesarray} from './importImages';
       tat_category: "חולצות",
       price: 75,
       description: "שלישיית בגדי גוף במגוון צבעים.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[34],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5
@@ -335,7 +335,7 @@ import {imagesarray} from './importImages';
       tat_category: "משהו אחר",
       price: 35,
       description: "כובע חורף לתינוק עם אוזניים חמודות.",
-      imageUrl: imagesarray[0],
+      imageUrl: imagesarray[35],
       sizes: {
         2: 5, 4: 5, 6: 5, 8: 5, 10: 5,
         12: 5, 14: 5, 16: 5

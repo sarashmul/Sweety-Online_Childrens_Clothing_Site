@@ -145,28 +145,53 @@
     color: #333;
   }
   
-  .promo-section {
-    background-color: #f8f9fa;
-    padding: 2rem;
-    text-align: center;
-  }
   
-  .promo-boxes {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
+/* עיצוב אזור המבצעים */
+.promo-section {
+  background-color: #f7f7f7; /* צבע רקע בהיר ונקי */
+  padding: 3rem 2rem; /* ריפוד רחב */
+  text-align: center;
+}
+
+/* כותרת */
+.promo-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* תיבות המבצע */
+.promo-boxes {
+  display: flex;
+  justify-content: space-between; /* מרווחים אחידים בין התיבות */
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap; /* למקרה שהמסך קטן, התיבות יעברו לשורה הבאה */
+}
+
+.promo-box {
+  background-color: #f6e1d3; /* צבע פודרה עדין */
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: calc(33.33% - 1rem); /* כל תיבה תופסת שליש רוחב */
+  border: 1px solid #e4d0c3; /* גבול צבע כהה יותר */
+  font-weight: bold;
+  color: #333; /* צבע טקסט כהה */
+  transition: background-color 0.3s ease; /* אפקט ריחוף */
+  cursor: pointer;
+}
+
+.promo-box:hover {
+  background-color: #e4d0c3; /* שינוי צבע קל בעת ריחוף */
+}
+
+/* מדיה רספונסיבית - עבור מסכים קטנים */
+@media (max-width: 768px) {
   .promo-box {
-    background-color: white;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 200px;
-    font-weight: bold;
+    width: 100%; /* כל תיבה תופסת 100% רוחב על מסכים קטנים */
   }
-  
+}
 
   
 

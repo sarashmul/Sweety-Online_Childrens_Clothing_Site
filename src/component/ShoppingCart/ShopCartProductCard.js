@@ -30,7 +30,7 @@
 
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
-
+import { FaTrashAlt } from 'react-icons/fa';
 function ShopCartProductCard({ product, onRemove, onClick }) {
   return (
     <Card 
@@ -46,7 +46,7 @@ function ShopCartProductCard({ product, onRemove, onClick }) {
           <strong>מידה:</strong> {product.selectedSize}
 
         </Card.Text>
-        <Button 
+        {/* <Button 
           variant="danger" 
           onClick={(e) => {
             e.stopPropagation(); // חשוב שלא יפעיל את ה־onClick של ה־Card
@@ -54,7 +54,18 @@ function ShopCartProductCard({ product, onRemove, onClick }) {
           }}
         >
           🗑
-        </Button>
+        </Button> */}
+            <Button 
+      className="btn btn-icon" 
+      variant="danger" 
+          onClick={(e) => {
+            e.stopPropagation(); // חשוב שלא יפעיל את ה־onClick של ה־Card
+            onRemove(product);
+          }} 
+      title="הסר"
+    >
+      <FaTrashAlt />
+    </Button>
       </Card.Body>
     </Card>
   );
