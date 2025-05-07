@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.css';
 import { FaShoppingCart, FaSearch } from "react-icons/fa";
-
+import sweety from "./sweetyLogo.png";
 export default function NavBar() {
   const routes = {
     home: "/",
@@ -31,7 +31,7 @@ export default function NavBar() {
   return (
     <nav className="navbar fixed-top navbar-expand-lg custom-navbar">
       <div className="container-fluid">
-        <Link className="navbar-brand" to={routes.home}>Navbar</Link>
+        <Link className="navbar-brand" to={routes.home}><img src={sweety} alt="Logo" className="img-fluid" style={{ maxHeight: '70px' }} /></Link>
 
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <span className="navbar-toggler-icon"></span>

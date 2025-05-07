@@ -39,7 +39,7 @@
 import React from 'react';
 import CategorysGrid from '../Home/CategorysGrid';
 import './HomePage.css';
-import backgroundImg from './Image/background.png'; 
+import backgroundImg from './Image/bunner.png'; 
 
 export default function HomePage() {
   return (
