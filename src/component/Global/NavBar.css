@@ -111,3 +111,11 @@ body {
 .navbar-nav .shopping-cart {
   margin-left: auto;
 }
+/* 
+/* רספונסיביות למובייל */
+@media (max-width: 576px) {
+  .custom-navbar{
+    background-color: white;
+
+  }
+} 

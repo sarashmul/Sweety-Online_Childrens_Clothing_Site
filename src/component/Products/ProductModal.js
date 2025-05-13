@@ -4,6 +4,7 @@ import { add_product } from '../../redux/action';
 import { useLocation } from 'react-router-dom';
 import CartSidebar from '../ShoppingCart/CartSidebar';
 import SizeSelector from './SizeSelector';
+import { Button, InputGroup, FormControl } from 'react-bootstrap';
 
 export default function ProductModal() {
   const location = useLocation();
@@ -11,6 +12,7 @@ export default function ProductModal() {
   const dispatch = useDispatch();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState(null);
+  const [quantity, setQuantity] = useState(1); 
 
   if (!product) return <div className="text-center text-danger mt-5">אין מוצר להצגה</div>;
 
@@ -19,11 +21,27 @@ export default function ProductModal() {
     dispatch(add_product({
       ...product,
       selectedSize: parseInt(selectedSize),
-      uniqueId: crypto.randomUUID()
+      uniqueId: crypto.randomUUID(),
+      quantity: quantity
     }));
     setIsCartOpen(true);
   };
 
+  
+
+  // const incrementQuantity = () => setQuantity(prevQuantity => prevQuantity + 1);
+
+  const incrementQuantity = () => {
+  // קבלת המלאי לפי המידה שנבחרה
+  const sizeStock = product?.sizes?.[selectedSize] || 0;
+
+  if (quantity < sizeStock) {
+    setQuantity(prevQuantity => prevQuantity + 1); // הוספה אם יש מספיק מלאי
+  } else {
+    alert('לא ניתן להוסיף יותר מהמלאי הקיים במידה זו');
+  }
+};
+  const decrementQuantity = () => setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   return (
     <>
       <CartSidebar isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
@@ -49,6 +67,20 @@ export default function ProductModal() {
 
             <h5 className="mb-2">בחר מידה:</h5>
             <SizeSelector product={product} onSelect={setSelectedSize} />
+
+<div className="my-3" style={{ maxWidth: '140px' }}>
+  <label className="form-label fw-bold">כמות:</label>
+  <InputGroup size="sm">
+    <Button variant="outline-dark" onClick={decrementQuantity}>−</Button>
+    <FormControl
+      value={quantity}
+      readOnly
+      className="text-center bg-light border-dark"
+    />
+    <Button variant="outline-dark" onClick={incrementQuantity}>+</Button>
+  </InputGroup>
+</div>
+
 
             <button
               onClick={handleAddToCart}

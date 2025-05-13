@@ -1,14 +1,16 @@
+
 import React, { useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 export default function OrderSummary() {
   const [deliveryOption, setDeliveryOption] = useState('free');
   const shoppingProducts = useSelector((state) => state.shopCart.shopCartProducts);
-  // const shoppingSum = useSelector((state) => state.shopCart.sumToPay);
-  const shoppingSum=useMemo(()=>{
-    return shoppingProducts.reduce((sum, p)=> sum+p.price, 0);
-  },[shoppingProducts]);
-  
+
+  // חישוב סך המחיר של כל המוצרים כולל כמות
+  const shoppingSum = useMemo(() => {
+    return shoppingProducts.reduce((sum, p) => sum + (p.price * p.quantity), 0);
+  }, [shoppingProducts]);
+
   const handleDeliveryChange = (event) => {
     setDeliveryOption(event.target.value);
   };
@@ -32,7 +34,9 @@ export default function OrderSummary() {
                   <span className="text-muted ms-2">(מידה: {product.selectedSize})</span>
                 )}
               </div>
-              <span className="fw-bold">{product.price} ש"ח</span>
+              <span className="fw-bold">
+                {product.price} ש"ח x {product.quantity} = {product.price * product.quantity} ש"ח
+              </span>
             </div>
           ))}
         </div>
