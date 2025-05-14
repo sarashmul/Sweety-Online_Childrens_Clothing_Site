@@ -17,7 +17,9 @@ export default function ProductModal() {
   if (!product) return <div className="text-center text-danger mt-5">אין מוצר להצגה</div>;
 
   const handleAddToCart = () => {
-    if (!selectedSize) return;
+    if (!selectedSize) {
+      alert('יש לבחור במידה הרצויה.');
+      return};
     dispatch(add_product({
       ...product,
       selectedSize: parseInt(selectedSize),
